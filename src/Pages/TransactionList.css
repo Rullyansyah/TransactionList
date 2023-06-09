@@ -1,0 +1,40 @@
+.container{
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    background-color: #f3f7f9;
+    box-sizing: border-box;
+}
+
+.content{
+    width: 570px;
+    padding: 0.6rem;
+    background-color: aqua;
+}
+
+.title{
+    padding: 1rem;
+    text-align: center;
+    font-size: 25px;
+}
+
+.info{
+    padding-bottom: 1rem;
+}
+
+.info span {
+    color: #fd6542;
+}
+
+.search input{
+    width: 70%;
+    height: 2rem;
+    padding: 0.6rem;
+    border: 0;
+}
+
+.search select{
+    width: 30%;
+    height: 2rem;
+    /* text-align: end; */
+}

@@ -10,6 +10,7 @@ const TransactionList = () => {
 
   const [dataCustomer, setData] = useState([]);
   const [query, setQuery] = useState("");
+  const [sort, setSort] = useState("");
 
   useEffect(() => {
     setData(TransactionContext.data);
@@ -17,6 +18,7 @@ const TransactionList = () => {
 
   //console.log("check - query : ", query);
   console.log("check - dataCustomer : ", dataCustomer);
+  console.log("check - sort : ", sort);
 
 
   return (
@@ -44,7 +46,7 @@ const TransactionList = () => {
               placeholder="Cari nama atau bank"
             />
 
-            <select name="urutan" id="urutan">
+            <select name="urutan" id="urutan" onChange={(e)=> setSort(e.target.value)}>
               <option defaultValue={""}>Urutkan</option>
               <option value="asc">Nama A-Z</option>
               <option value="desc">Nama Z-A</option>

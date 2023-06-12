@@ -46,6 +46,10 @@
   /* text-align: end; */
 }
 
+option:hover{
+  background-color: #fd6542;
+}
+
 .data-customer-detail {
   display: flex;
   flex-direction: row;

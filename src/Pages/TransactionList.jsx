@@ -47,7 +47,6 @@ const TransactionList = () => {
 
             <select
               name="urutan"
-              id="urutan"
               onChange={(e) => setSort(e.target.value)}
             >
               <option defaultValue={""}>Urutkan</option>

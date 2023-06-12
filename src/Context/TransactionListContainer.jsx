@@ -13,7 +13,7 @@ const TransactionListContainer = ({ children }) => {
 
   useEffect(() => {
     getDataApi();
-    // sorting()
+    //sorting()
   }, []);
 
   const getDataApi = async () => {
@@ -49,15 +49,15 @@ const TransactionListContainer = ({ children }) => {
     }).format(number);
   };
 
-  // const sorting = (x) => {
-  //   if (sort === "ASC") {
-  //     const sorted = [...data].sort((a, b) =>
-  //       a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
-  //     );
+  const sorting = (x) => {
+    if (sort === "ASC") {
+      const sorted = [...data].sort((a, b) =>
+        a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
+      );
 
-  //     console.log("check - sorted di context: ", sorted);
-  //   }
-  // };
+      console.log("check - sorted di context: ", sorted);
+    }
+  };
 
   console.log("check - data di context: ", data);
   //console.log("check - id di context: ", id);

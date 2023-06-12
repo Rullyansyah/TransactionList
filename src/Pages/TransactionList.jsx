@@ -20,7 +20,6 @@ const TransactionList = () => {
   //console.log("check - dataCustomer : ", dataCustomer);
   console.log("check - sort : ", sort);
 
-
   return (
     <div className="container">
       <div>
@@ -46,7 +45,11 @@ const TransactionList = () => {
               placeholder="Cari nama atau bank"
             />
 
-            <select name="urutan" id="urutan" onChange={(e)=> setSort(e.target.value)}>
+            <select
+              name="urutan"
+              id="urutan"
+              onChange={(e) => setSort(e.target.value)}
+            >
               <option defaultValue={""}>Urutkan</option>
               <option value="asc">Nama A-Z</option>
               <option value="desc">Nama Z-A</option>
@@ -56,43 +59,54 @@ const TransactionList = () => {
           </div>
 
           <div className="data">
-            <div>
-              {Object.values(TransactionContext.data)
-                .filter(
-                  (a) =>
-                    a.beneficiary_name.toLowerCase().includes(query) ||
-                    a.beneficiary_bank.toLowerCase().includes(query) ||
-                    query === ""
-                )
-                .map((x) => (
-                  <div className={x.status === "SUCCESS" ? "data-customer-success" : "data-customer"}>
-                    <div className="data-transaksi">
-                      <p>
-                        {" "}
-                        {x.sender_bank} » {x.beneficiary_bank}{" "}
-                      </p>
-                      <p> {x.beneficiary_name} </p>
-                      <p>
-                        {" "}
-                        {TransactionContext.rupiah(x.amount)} • {x.completed_at}{" "}
-                      </p>
-                    </div>
+            {TransactionContext.data ? (
+              <div>
+                {Object.values(TransactionContext.data)
+                  .filter(
+                    (a) =>
+                      a.beneficiary_name.toLowerCase().includes(query) ||
+                      a.beneficiary_bank.toLowerCase().includes(query) ||
+                      query === ""
+                  )
+                  .map((x) => (
+                    <div
+                      className={
+                        x.status === "SUCCESS"
+                          ? "data-customer-success"
+                          : "data-customer"
+                      }
+                    >
+                      <div className="data-transaksi">
+                        <p>
+                          {" "}
+                          {x.sender_bank} » {x.beneficiary_bank}{" "}
+                        </p>
+                        <p> {x.beneficiary_name} </p>
+                        <p>
+                          {" "}
+                          {TransactionContext.rupiah(x.amount)} •{" "}
+                          {x.completed_at}{" "}
+                        </p>
+                      </div>
 
-                    <div className="status">
-                      <Link
-                        to={`/detail/${x.id}`}
-                        className={
-                          x.status === "SUCCESS"
-                            ? "button berhasil"
-                            : "button gagal"
-                        }
-                      >
-                        {x.status}
-                      </Link>
+                      <div className="status">
+                        <Link
+                          to={`/detail/${x.id}`}
+                          className={
+                            x.status === "SUCCESS"
+                              ? "button berhasil"
+                              : "button gagal"
+                          }
+                        >
+                          {x.status}
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                ))}
-            </div>
+                  ))}
+              </div>
+            ) : (
+              "Data Not Found"
+            )}
           </div>
         </div>
       </div>

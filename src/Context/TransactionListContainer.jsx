@@ -9,13 +9,13 @@ const TransactionListContainer = ({ children }) => {
   const [data, setData] = useState();
   const [view, setView] = useState(false)
   const [id, setID] = useState()
+  const [sort, setSort] = useState({sort:"id" , reverse: false})
 
   useEffect(() => {
     getDataApi();
   }, []);
 
   
-
   const getDataApi = () => {
     const response = axios({
       method: "GET",
@@ -52,10 +52,12 @@ const TransactionListContainer = ({ children }) => {
     setView(!view)
   }
 
+
+
   console.log("check - data di context: ", data);
   //console.log("check - id di context: ", id);
 
-  // console.log(rupiah(20000))
+
   
   return (
     <TransactionListContext.Provider

@@ -18,6 +18,7 @@ const TransactionList = () => {
   //console.log("check - query : ", query);
   console.log("check - dataCustomer : ", dataCustomer);
 
+
   return (
     <div className="container">
       <div>
@@ -45,20 +46,20 @@ const TransactionList = () => {
 
             <select name="urutan" id="urutan">
               <option defaultValue={""}>Urutkan</option>
-              <option value="namaa">Nama A-Z</option>
-              <option value="nama">Nama Z-A</option>
+              <option value="asc">Nama A-Z</option>
+              <option value="desc">Nama Z-A</option>
               <option value="terbaru">Tanggal Terbaru</option>
               <option value="terlama">Tanggal Terlama</option>
             </select>
           </div>
 
           <div className="data">
-            <div>
+            {/* <div>
               {Object.values(dataCustomer)
                 .filter(
                   (a) =>
-                    a.beneficiary_name.includes(query) ||
-                    a.beneficiary_bank.includes(query) ||
+                    a.beneficiary_name.toLowerCase().includes(query) ||
+                    a.beneficiary_bank.toLowerCase().includes(query) ||
                     query === ""
                 )
                 .map((x) => (
@@ -89,7 +90,7 @@ const TransactionList = () => {
                     </div>
                   </div>
                 ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

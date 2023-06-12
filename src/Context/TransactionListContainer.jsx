@@ -23,7 +23,7 @@ const TransactionListContainer = ({ children }) => {
       withCredentials: false,
       headers: {
         "Content-Type": "Application/json",
-        "Access-Control-Allow-Origin" : "https://recruitment-test.flip.id/frontend-test"
+        "Access-Control-Allow-Origin" : "*"
       },
     }).then((data) => {
       //console.log("check - data : ", data);

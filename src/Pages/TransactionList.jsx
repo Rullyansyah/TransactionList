@@ -54,7 +54,7 @@ const TransactionList = () => {
           </div>
 
           <div className="data">
-            {/* <div>
+            <div>
               {Object.values(dataCustomer)
                 .filter(
                   (a) =>
@@ -90,7 +90,7 @@ const TransactionList = () => {
                     </div>
                   </div>
                 ))}
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

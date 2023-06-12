@@ -1,40 +1,120 @@
-.container{
-    display: flex;
-    padding: 2rem;
-    justify-content: center;
-    background-color: #f3f7f9;
-    box-sizing: border-box;
+.container {
+  height: 100vh;
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+  background-color: #f3f7f9;
+  box-sizing: border-box;
 }
 
-.content{
-    width: 570px;
-    padding: 0.6rem;
-    background-color: aqua;
+.content {
+  width: 570px;
+  height: 100vh;
+  padding: 0.6rem;
+  background-color: #f3f7f9;
 }
 
-.title{
-    padding: 1rem;
-    text-align: center;
-    font-size: 25px;
+.data{
+  height: 60vh;
+  overflow: scroll;
 }
 
-.info{
-    padding-bottom: 1rem;
+.title {
+  padding: 1rem;
+  text-align: center;
+  font-size: 25px;
+}
+
+.info {
+  padding-bottom: 1rem;
 }
 
 .info span {
-    color: #fd6542;
+  color: #fd6542;
 }
 
-.search input{
-    width: 70%;
-    height: 2rem;
-    padding: 0.6rem;
-    border: 0;
+.search input {
+  width: 70%;
+  height: 2rem;
+  padding: 0.6rem;
+  border: 0;
 }
 
-.search select{
-    width: 30%;
-    height: 2rem;
-    /* text-align: end; */
+.search select {
+  width: 30%;
+  height: 2rem;
+  /* text-align: end; */
+}
+
+.data-customer {
+  display: flex;
+  flex-direction: row;
+  padding: 0.6rem;
+  margin-top: 0.6rem;
+  background-color: #ffffff;
+}
+
+.data-transaksi {
+  width: 50%;
+}
+
+.status {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  align-self: center;
+
+  /* background-color: #fd6542; */
+}
+
+.berhasil {
+  border: none;
+  border-radius: 10%;
+  font-size: 12px;
+  padding: 0.3rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #56b586;
+}
+
+.gagal {
+  border: none;
+  border-radius: 10%;
+  font-size: 12px;
+  padding: 0.3rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #fd6542;
+}
+
+.id-transaksi{
+  padding: 0.6rem;
+  background-color: #ffffff;
+}
+
+.data-customer{
+  padding: 0.6rem;
+  flex-direction: row;
+}
+
+.logo{
+  width: 15%;
+  padding: 0.6rem;
+  text-align: center;
+  justify-content: center;
+  /* background-color: #56b586; */
+}
+
+.data-detail{
+  width: 85%;
+  padding: 0.6rem;
+  /* background-color: #fd6542; */
+}
+
+.subtitle{
+  font-weight: bold;
 }

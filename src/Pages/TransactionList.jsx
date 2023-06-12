@@ -57,8 +57,8 @@ const TransactionList = () => {
               {Object.values(dataCustomer)
                 .filter(
                   (a) =>
-                    a.beneficiary_name === query ||
-                    a.beneficiary_bank === query ||
+                    a.beneficiary_name.includes(query) ||
+                    a.beneficiary_bank.includes(query) ||
                     query === ""
                 )
                 .map((x) => (

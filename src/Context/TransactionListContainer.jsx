@@ -5,17 +5,17 @@ import { useNavigate } from "react-router-dom";
 export const TransactionListContext = createContext();
 
 const TransactionListContainer = ({ children }) => {
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   const [data, setData] = useState();
-  const [view, setView] = useState(false)
-  const [id, setID] = useState()
-  const [sort, setSort] = useState({sort:"id" , reverse: false})
+  const [view, setView] = useState(false);
+  const [id, setID] = useState();
+  const [sort, setSort] = useState("ASC");
 
   useEffect(() => {
     getDataApi();
+    // sorting()
   }, []);
 
-  
   const getDataApi = async () => {
     const response = await axios({
       method: "GET",
@@ -23,42 +23,45 @@ const TransactionListContainer = ({ children }) => {
       withCredentials: false,
       headers: {
         "Content-Type": "Application/json",
-        "Access-Control-Allow-Origin" : "*"
+        "Access-Control-Allow-Origin": "*",
       },
-    }).then((data) => {
-      //console.log("check - data : ", data);
-      setData(data.data);
-    }).catch(error => {
-      console.log(error)
-    });
+    })
+      .then((data) => {
+        //console.log("check - data : ", data);
+        setData(data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  
   const getView = (id) => {
-    setView(!view)
-    setID(id)
+    setView(!view);
+    setID(id);
     //navigate(`/detail/${id}`)
     // setId('')
-  }
+  };
 
-  const rupiah = (number)=>{
+  const rupiah = (number) => {
     return new Intl.NumberFormat("id-ID", {
       style: "currency",
-      currency: "IDR"
+      currency: "IDR",
     }).format(number);
-  }
+  };
 
-  const kembali = () => {
-    setView(!view)
-  }
+  // const sorting = (x) => {
+  //   if (sort === "ASC") {
+  //     const sorted = [...data].sort((a, b) =>
+  //       a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
+  //     );
 
-
+  //     console.log("check - sorted di context: ", sorted);
+  //   }
+  // };
 
   console.log("check - data di context: ", data);
   //console.log("check - id di context: ", id);
 
-
-  
   return (
     <TransactionListContext.Provider
       value={{
@@ -67,7 +70,6 @@ const TransactionListContainer = ({ children }) => {
         view,
         id,
         rupiah,
-        kembali
       }}
     >
       {children}

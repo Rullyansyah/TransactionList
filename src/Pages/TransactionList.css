@@ -52,6 +52,16 @@
   padding: 0.6rem;
   margin-top: 0.6rem;
   background-color: #ffffff;
+  border-left: 3px solid #fd6542
+}
+
+.data-customer-success{
+  display: flex;
+  flex-direction: row;
+  padding: 0.6rem;
+  margin-top: 0.6rem;
+  background-color: #ffffff;
+  border-left: 3px solid #56b586
 }
 
 .data-transaksi {

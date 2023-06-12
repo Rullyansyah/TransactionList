@@ -65,7 +65,7 @@ const TransactionList = () => {
                     query === ""
                 )
                 .map((x) => (
-                  <div className="data-customer">
+                  <div className={x.status === "SUCCESS" ? "data-customer-success" : "data-customer"}>
                     <div className="data-transaksi">
                       <p>
                         {" "}

@@ -63,7 +63,7 @@ const TransactionDetail = () => {
                 ))}
             </div>
 
-            <button onClick={()=> navigate('/')} className="button is-warning">
+            <button onClick={()=> navigate('/')} className="button back">
               Kembali
             </button>
           </div>

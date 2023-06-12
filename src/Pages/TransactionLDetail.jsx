@@ -29,7 +29,7 @@ const TransactionDetail = () => {
                       <p>IDTRANSAKSI : {`#${x.id}`}</p>
                     </div>
 
-                    <div className="data-customer">
+                    <div className="data-customer-detail">
                       <div className="logo">Hay</div>
                       <div className="data-detail">
                         <p className="subtitle">PENGIRIM</p>

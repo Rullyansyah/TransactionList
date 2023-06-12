@@ -46,6 +46,14 @@
   /* text-align: end; */
 }
 
+.data-customer-detail {
+  display: flex;
+  flex-direction: row;
+  padding: 0.6rem;
+  margin-top: 0.6rem;
+  background-color: #ffffff;
+}
+
 .data-customer {
   display: flex;
   flex-direction: row;

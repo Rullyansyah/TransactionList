@@ -16,14 +16,14 @@ const TransactionListContainer = ({ children }) => {
   }, []);
 
   
-  const getDataApi = () => {
-    const response = axios({
+  const getDataApi = async () => {
+    const response = await axios({
       method: "GET",
       url: `https://cors-anywhere.herokuapp.com/https://recruitment-test.flip.id/frontend-test`,
       withCredentials: false,
       headers: {
         "Content-Type": "Application/json",
-        "Access-Control-Allow-Origin" : "*"
+        "Access-Control-Allow-Origin" : "https://recruitment-test.flip.id/frontend-test"
       },
     }).then((data) => {
       //console.log("check - data : ", data);

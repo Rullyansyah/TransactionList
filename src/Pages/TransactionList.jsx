@@ -8,16 +8,16 @@ const TransactionList = () => {
   const TransactionContext = useContext(TransactionListContext);
   //console.log('check - TransactionContext : ', TransactionContext)
 
-  const [dataCustomer, setData] = useState([]);
+  // [dataCustomer, setData] = useState([]);
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("");
 
-  useEffect(() => {
-    setData(TransactionContext.data);
-  }, []);
+  // useEffect(() => {
+  //   setData(TransactionContext.data);
+  // }, []);
 
   //console.log("check - query : ", query);
-  console.log("check - dataCustomer : ", dataCustomer);
+  //console.log("check - dataCustomer : ", dataCustomer);
   console.log("check - sort : ", sort);
 
 
@@ -57,7 +57,7 @@ const TransactionList = () => {
 
           <div className="data">
             <div>
-              {Object.values(dataCustomer)
+              {Object.values(TransactionContext.data)
                 .filter(
                   (a) =>
                     a.beneficiary_name.toLowerCase().includes(query) ||

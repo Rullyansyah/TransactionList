@@ -71,7 +71,7 @@ const TransactionList = () => {
                       <p> {x.beneficiary_name} </p>
                       <p>
                         {" "}
-                        {x.amount} • {x.completed_at}{" "}
+                        {TransactionContext.rupiah(x.amount)} • {x.completed_at}{" "}
                       </p>
                     </div>
 

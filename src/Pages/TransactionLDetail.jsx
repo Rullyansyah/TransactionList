@@ -45,7 +45,7 @@ const TransactionDetail = () => {
                         <br />
 
                         <p className="subtitle">NOMINAL</p>
-
+                        <p>{TransactionContext.rupiah(x.amount)}</p>
                         <p>Kode Unik : {x.unique_code}</p>
 
                         <br />
